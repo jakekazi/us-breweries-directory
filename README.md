@@ -1,1 +1,1 @@
-# us-breweries-directory
+List all breweries in any US city
