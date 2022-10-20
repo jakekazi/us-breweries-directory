@@ -1,21 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Breweries from "../Components/Breweries";
-// import axios from "axios";
 
-export default function BreweriesContainer({}) {
+export default function BreweriesContainer() {
   const [breweries, setBreweries] = useState([]);
 
-  const fetchBreweries = (url) => {
-    return fetch(url).then((result) => result.json());
-  };
+  const breweryCity = "harrisburg";
 
   useEffect(() => {
-    fetchBreweries("https://api.openbrewerydb.org/breweries?by_city=harrisburg")
-      .then((breweriesData) => {
-        setBreweries(breweriesData);
-        console.log("Successfully got all breweries.");
-      })
+    fetch(`https://api.openbrewerydb.org/breweries?by_city=${breweryCity}`)
+      .then((res) => res.json())
+      .then((res) => setBreweries(res))
       .catch((err) =>
         console.log(
           "Error while attempting to get all breweries in BreweriesContainer: ",
