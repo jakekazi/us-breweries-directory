@@ -1,12 +1,18 @@
-export default function Breweries({ breweryDetails }) {
-    const { name, street, city, state, postal_code, latitude, longitude } =
-      breweryDetails;
-  
-    return (
-      <>
-        <div>
+import { useLocation } from "react-router-dom";
+
+export default function Breweries() {
+  const { state } = useLocation();
+
+  return (
+    <>
+      <div>
         <h1>Brewery Details</h1>
-        </div>
-      </>
-    );
-  }
+        <p>{state.name}</p>
+        <p>
+          {state.street}, {state.city}, {state.state}{" "}
+          {state.postal_code}
+        </p>
+      </div>
+    </>
+  );
+}

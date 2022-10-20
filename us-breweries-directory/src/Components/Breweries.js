@@ -1,15 +1,33 @@
-import BreweryDetails from './BreweryDetails'
+// import BreweryDetails from "./BreweryDetails";
+import { useNavigate } from "react-router-dom";
 
 export default function Breweries({ brewery }) {
   //latitude and longitude are also available
-  const { name, brewery_type, street, city, postal_code, website_url } =
-    brewery;
+  const {
+    name,
+    brewery_type,
+    street,
+    city,
+    state,
+    postal_code,
+    website_url,
+    latitude,
+    longitude,
+  } = brewery;
 
-  //handle button click
-  
+  const navigate = useNavigate();
   const getBreweryDetails = () => {
-    // console.log('hi')
-    //navigate to the BreweryDetails component
+    navigate("/brewery-details", {
+      state: {
+        name: name,
+        street: street,
+        city: city,
+        state: state,
+        postal_code: postal_code,
+        latitude: latitude,
+        longitude: longitude,
+      },
+    });
   };
 
   return (
