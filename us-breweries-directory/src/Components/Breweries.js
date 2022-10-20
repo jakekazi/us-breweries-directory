@@ -1,23 +1,19 @@
-import React from "react";
-import { useEffect, useState } from "react";
-
-export default function Breweries({}) {
-  const [breweriesList, setBreweriesList] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.openbrewerydb.org/breweries")
-      .then((res) => res.json())
-      .then((data) => {
-        setBreweriesList(data);
-        console.log(data);
-      });
-  }, []);
+export default function Breweries({ brewery }) {
+  const { name, brewery_type, street, city, postal_code, website_url } =
+    brewery;
 
   return (
-    <div data-testid="breweries-div" className="listingContainer">
-      {breweriesList.map((brewery) => (
-        <div className="listingDiv">{brewery.city}</div>
-      ))}
-    </div>
+    <>
+      <div>
+        <p>Name: {name}</p>
+        <p>Type: {brewery_type}</p>
+        <p>
+          Address: {street} {city} {postal_code}
+        </p>
+        <a href={website_url} target="_blank" rel="noreferrer">
+          Website
+        </a>
+      </div>
+    </>
   );
 }
