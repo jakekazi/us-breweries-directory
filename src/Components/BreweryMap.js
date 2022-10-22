@@ -14,7 +14,6 @@ export default function BreweryMap({ props }) {
   };
 
   return (
-    //put api key in .env
     <LoadScript googleMapsApiKey="AIzaSyCof0vc69QhUjMsFWJNvkmAQq60_a8UwCU">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
         <Marker position={center} />

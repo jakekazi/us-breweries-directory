@@ -21,6 +21,7 @@ export default function BreweriesContainer() {
 
   return (
     <div data-testid="breweries-div" className="listingContainer">
+       <h1>List of Breweries</h1>
       {breweries.map((brewery) => (
         <Breweries brewery={brewery} key={brewery.id} />
       ))}
