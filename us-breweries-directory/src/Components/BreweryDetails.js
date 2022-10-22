@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import BreweryMap from "./BreweryMap";
 
 export default function Breweries() {
   const { state } = useLocation();
@@ -12,6 +13,7 @@ export default function Breweries() {
           {state.street}, {state.city}, {state.state}{" "}
           {state.postal_code}
         </p>
+        <BreweryMap props={state}/>
       </div>
     </>
   );

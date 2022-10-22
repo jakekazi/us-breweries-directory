@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Breweries from "../Components/Breweries";
+import Breweries from "../Components/BreweriesList";
 
 export default function BreweriesContainer() {
   const [breweries, setBreweries] = useState([]);

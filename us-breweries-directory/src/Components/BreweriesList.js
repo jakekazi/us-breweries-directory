@@ -39,7 +39,7 @@ export default function Breweries({ brewery }) {
           Address: {street}, {city} {postal_code}
         </p>
         <p>
-          Website:{" "}
+          {/* {" "} */}
           <a href={website_url} target="_blank" rel="noreferrer">
             Visit their website
           </a>
