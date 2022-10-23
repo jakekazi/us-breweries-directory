@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Breweries from "../Components/BreweriesList";
+import "../assets/global.css"
+import BreweriesList from "../Components/BreweriesList";
 
 export default function BreweriesContainer() {
   const [breweries, setBreweries] = useState([]);
@@ -20,10 +21,10 @@ export default function BreweriesContainer() {
   }, []);
 
   return (
-    <div data-testid="breweries-div" className="listingContainer">
-       <h1>List of Breweries</h1>
+    <div data-testid="breweries-div" className="listContainer">
+       <h1>List of Breweries in Harrisburg, PA</h1>      
       {breweries.map((brewery) => (
-        <Breweries brewery={brewery} key={brewery.id} />
+        <BreweriesList brewery={brewery} key={brewery.id} />
       ))}
     </div>
   );

@@ -1,3 +1,7 @@
+# An app to display all breweries in a U.S. city.
+# Each brewery has details with its website link and a map that shows its location.
+# The Google Maps API key is restricted.
+
 ## Available Scripts
 
 In the project directory, you can run:

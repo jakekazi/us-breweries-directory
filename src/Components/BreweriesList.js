@@ -1,8 +1,6 @@
-// import BreweryDetails from "./BreweryDetails";
 import { useNavigate } from "react-router-dom";
 
-export default function Breweries({ brewery }) {
-  //latitude and longitude are also available
+export default function BreweriesList({ brewery }) {
   const {
     name,
     brewery_type,
@@ -16,7 +14,8 @@ export default function Breweries({ brewery }) {
   } = brewery;
 
   const navigate = useNavigate();
-  const getBreweryDetails = () => {
+
+  const handleBreweryDetails = () => {
     navigate("/brewery-details", {
       state: {
         name: name,
@@ -31,21 +30,20 @@ export default function Breweries({ brewery }) {
   };
 
   return (
-    <>
-      <div>
-        <p>Name: {name}</p>
+      <div className="listDiv">
+        <p>{name}</p>
         <p>Type: {brewery_type}</p>
+          {street? <p>Address: {street}, {city} {postal_code}</p> : <p>Address: Not found</p>}
         <p>
-          Address: {street}, {city} {postal_code}
-        </p>
-        <p>
-          {/* {" "} */}
           <a href={website_url} target="_blank" rel="noreferrer">
             Visit their website
           </a>
         </p>
-        <button onClick={() => getBreweryDetails()}>View more details</button>
+        <div className="listBtn">
+        <button onClick={() => handleBreweryDetails()}>
+          View more details
+        </button>
+        </div>
       </div>
-    </>
   );
 }
