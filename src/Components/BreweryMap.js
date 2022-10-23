@@ -1,6 +1,6 @@
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import "../assets/global.css"
+import "../assets/global.css";
 
 const containerStyle = {
   width: "400px",
@@ -14,7 +14,7 @@ export default function BreweryMap({ props }) {
     lng: Number(longitude),
   };
 
-  if (center.lat === 0 && center.lng === 0) return (<p>Map not available</p>)
+  if (center.lat === 0 && center.lng === 0) return <p>Map not available</p>;
 
   return (
     <LoadScript googleMapsApiKey="AIzaSyCof0vc69QhUjMsFWJNvkmAQq60_a8UwCU">

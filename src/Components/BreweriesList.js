@@ -15,7 +15,7 @@ export default function BreweriesList({ brewery }) {
 
   const navigate = useNavigate();
 
-  const handleBreweryDetails = () => {
+  const handleClickBreweryDetails = () => {
     navigate("/brewery-details", {
       state: {
         name: name,
@@ -29,21 +29,35 @@ export default function BreweriesList({ brewery }) {
     });
   };
 
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
-      <div className="listDiv">
-        <p>{name}</p>
-        <p>Type: {brewery_type}</p>
-          {street? <p>Address: {street}, {city} {postal_code}</p> : <p>Address: Not found</p>}
-        <p>
-          <a href={website_url} target="_blank" rel="noreferrer">
-            Visit their website
-          </a>
+    <div className="listDiv">
+      <b>{name}</b>
+      <br></br>
+      Type: {capitalize(brewery_type)}
+      {street ? (
+        <p className="address">
+          {street}, {city}, {state} {postal_code}
         </p>
-        <div className="listBtn">
-        <button onClick={() => handleBreweryDetails()}>
+      ) : (
+        <p className="address">Address Not found</p>
+      )}
+      {website_url ? (
+        <a href={website_url} target="_blank" rel="noreferrer">
+          Visit their website
+        </a>
+      ) : (
+        <p>Website not available</p>
+      )}
+      <br></br>
+      <div>
+        <button onClick={() => handleClickBreweryDetails()} className="listBtn">
           View more details
         </button>
-        </div>
       </div>
+    </div>
   );
 }

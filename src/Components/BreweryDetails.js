@@ -11,23 +11,24 @@ export default function Breweries() {
 
   return (
     <div className="breweryDetailsContainer">
-    <h1>Brewery Details</h1>
+      <h1>Brewery Details</h1>
       <div className="breweryDetails">
-        <div className=".backToListBtn">
-        <button onClick={() => goToListingPage()}>
-          Go back to breweries list
-        </button>
+        <div>
+          <button onClick={() => goToListingPage()} className="listBtn">
+            Go back to breweries list
+          </button>
         </div>
-        <p>{state.name}</p>
+        <br></br>
+        <b>{state.name}</b>
         {state.street ? (
-          <p>
+          <p className="address">
             {state.street}, {state.city}, {state.state} {state.postal_code}
           </p>
         ) : (
-          <p>Address not found</p>
+          <p className="address">Address not found</p>
         )}
-<div className="mapDiv">
-        <BreweryMap props={state} />
+        <div className="mapDiv">
+          <BreweryMap props={state} />
         </div>
       </div>
     </div>
