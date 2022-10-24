@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import BreweriesContainer from "./Containers/BreweriesContainer";
 import BreweryDetails from "./Components/BreweryDetails";

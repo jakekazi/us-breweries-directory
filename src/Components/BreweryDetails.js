@@ -19,7 +19,7 @@ export default function Breweries() {
           </button>
         </div>
         <br></br>
-        <b>{state.name}</b>
+        <div className="brewery-name">{state.name}</div>
         {state.street ? (
           <p className="address">
             {state.street}, {state.city}, {state.state} {state.postal_code}

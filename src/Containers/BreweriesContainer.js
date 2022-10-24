@@ -22,7 +22,7 @@ export default function BreweriesContainer() {
 
   return (
     <div data-testid="breweries-div" className="listContainer">
-      <h1>{`List of Breweries in ${breweryCity}`}</h1>
+      <h1>{`Breweries in ${breweryCity}`}</h1>
       {breweries.map((brewery) => (
         <BreweriesList brewery={brewery} key={brewery.id} />
       ))}

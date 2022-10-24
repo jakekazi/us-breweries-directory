@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function BreweriesList({ brewery }) {
   const {
+    id,
     name,
     brewery_type,
     street,
@@ -34,10 +35,10 @@ export default function BreweriesList({ brewery }) {
   };
 
   return (
-    <div className="listDiv">
-      <b>{name}</b>
+    <div data-testid={`brewery-${id}`} className="listDiv">
+      <div className="brewery-name">{name}</div>
       <br></br>
-      Type: {capitalize(brewery_type)}
+      <div className="brewery-type">Type: {capitalize(brewery_type)}</div>
       {street ? (
         <p className="address">
           {street}, {city}, {state} {postal_code}
