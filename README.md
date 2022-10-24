@@ -1,6 +1,6 @@
-# An app to display all breweries in a U.S. city.
-# Each brewery has details with its website link and a map that shows its location.
-# The Google Maps API key is restricted.
+### An app to display all breweries in a U.S. city.
+### Each brewery has details with its website link and a map that shows its location.
+### The Google Maps API key is restricted.
 
 ## Available Scripts
 
@@ -17,7 +17,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 

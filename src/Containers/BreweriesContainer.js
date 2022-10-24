@@ -2,25 +2,21 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "../assets/global.css";
 import BreweriesList from "../Components/BreweriesList";
+import { getBreweriesFromApi, breweryCity } from "../api";
 
 export default function BreweriesContainer() {
   const [breweries, setBreweries] = useState([]);
-
-  const breweryCity = "Harrisburg";
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`https://api.openbrewerydb.org/breweries?by_city=${breweryCity}`)
-      .then((res) => res.json())
-      .then((res) => setBreweries(res))
-      .catch((err) =>
-        console.log(
-          "Error while attempting to get all breweries in BreweriesContainer: ",
-          err
-        )
-      );
+    getBreweriesFromApi()
+      .then((data) => setBreweries(data))
+      .catch((e) => setError(true));
   }, []);
 
-  return (
+  return error ? (
+    <p>Unable to fetch breweries</p>
+  ) : (
     <div data-testid="breweries-div" className="listContainer">
       <h1>{`Breweries in ${breweryCity}`}</h1>
       {breweries.map((brewery) => (

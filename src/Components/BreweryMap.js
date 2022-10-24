@@ -9,6 +9,7 @@ const containerStyle = {
 
 export default function BreweryMap({ props }) {
   const { latitude, longitude } = props;
+
   const center = {
     lat: Number(latitude),
     lng: Number(longitude),
