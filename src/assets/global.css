@@ -49,3 +49,18 @@
 .brewery-type {
     color: rgb(63, 61, 61)
 }
+
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBtn {
+    margin-left: 5px;
+    background-color:rgb(105, 144, 113);
+    color: white
+}
