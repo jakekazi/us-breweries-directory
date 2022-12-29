@@ -3,20 +3,15 @@ import urllib.request, json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/breweries")
 def get_breweries():
-    url = ""
+    url = "https://api.openbrewerydb.org/breweries?by_city=harrisburg"
 
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
 
-    return render_template ("movies.html", movies=dict["results"])
-
-@app.route("/hello")
-def hello_world():
-    return "<p>Hello, Jake!</p>"
-
+    return render_template ("breweries.html", breweries=dict["results"])
 
 if __name__ == '__main__':
     app.run(debug=True)
