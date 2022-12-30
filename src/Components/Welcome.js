@@ -11,12 +11,17 @@ export default function BreweriesContainer() {
 
   const navigate = useNavigate();
 
+  // const handleClickSearchCity = () => {
+  //   navigate("/breweries-list", {
+  //     state: {
+  //       city: city,
+  //     },
+  //   });
+  // };
+
+  //post a request w/ input city to the backend to get breweries
   const handleClickSearchCity = () => {
-    navigate("/breweries-list", {
-      state: {
-        city: city,
-      },
-    });
+    
   };
 
   return (
