@@ -1,7 +1,7 @@
 # U.S. Breweries Directory
 A site to display all breweries in a U.S. city from user's input.\
 Each brewery has details with its website link and a map to show its location.\
-The Google Maps API key is restricted.
+The Google Maps API key is restricted. Visit site: https://us-breweries-directory.herokuapp.com/
 
 ## Available Scripts
 
